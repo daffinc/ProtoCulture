@@ -1,0 +1,30 @@
+.grid-gallery {
+    &.media-videos {
+        background-color: #222;
+        @include box-shadow(0,0,8px,#000);
+
+        header {
+            h1 {
+                color: #F2F2F2;
+            }
+            small {
+                color: #F2F2F2;
+                a {
+                    color: #F2F2F2;
+                }
+            }
+        }
+        [role=article] {
+            .grid-box {
+                h3 {
+                    a {
+                        color: #F2F2F2;
+                    }
+                }
+                p {
+                    color: #999;
+                }
+            }
+        }
+    }
+}

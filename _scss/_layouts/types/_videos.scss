@@ -1,0 +1,91 @@
+.post-type-archive-media_videos {
+    background-color: black;
+    h1, h2, h3, h4, p, ul, li, a, small {
+        color: #cccccc;
+    }
+    span#time {
+        color: #CCC !important;
+    }
+    .single {
+        .inner-content-single {
+            @include display-flex(flex);
+            @include flex-flow(row wrap);
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            [role=article] {
+                @include display-flex(flex);
+                @include flex-flow(row wrap);
+                width: 95%;
+                margin: 0 auto;
+                @include susy-breakpoint(960px, $wide) {
+                    width: 100%;
+                    margin: 0;
+                }
+                .article-header {
+                    display: inline-block;
+                    width: 100%;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                    @include susy-breakpoint(960px, $wide) {
+                        width: 55%;
+                    margin: 0 0.75em 0 0;
+                    }
+                    figure {
+                        min-height: 200px;
+                        @include susy-breakpoint(960px, $wide) {
+                            min-height: 420px;
+                        }
+                    }
+                }
+            }
+            .excerpts {
+                width: 95%;
+                float: left;
+                display: block;
+                margin: 0 auto;
+                padding: 0;
+                @include susy-breakpoint(960px, $wide) {
+                    width: 40%;
+                    margin: 0;
+                }
+                h2 {
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.2em;
+                    @include font-size(30px);
+                    letter-spacing: 1.5px;
+                    @include susy-breakpoint(960px, $wide) {
+                        @include font-size(40px);
+                    }
+                    a {
+                        display: block;
+                    }
+                }
+                small {
+                    @incldue font-size(16px);
+                }
+            }
+        }
+        .more-videos {
+            h3 {
+                display: block;
+                margin: 0.75em 0 0;
+                padding: 0;
+                font-size: 25px;
+                width: 50%;
+                float: left;
+            }
+            .item {
+                a {
+                    font-size: 18px;
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.5em;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+
+/* ==========================================================================
+Inline Grid : Ultimas Noticias
+========================================================================== */
+
+
+.grid-inline
+{
+    position: relative;
+    overflow: hidden;
+    padding: 0 0.75em;
+    width: 100%;
+
+    .article-grid
+    {
+        height: 100%;
+        margin-top:1em !important;
+
+        .newsSlider
+        {
+            margin: 1em 0 !important;
+            padding: 0;
+            display: block;
+            overflow: hidden;
+        }
+    }
+
+    article
+    {
+
+        width: 100%;
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-align: center;
+
+
+        h3,p
+        {
+            padding: 0;
+            margin: 0;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        figure
+        {
+            width:100%;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: 100%;
+
+            a
+            {
+                display: block;
+            }
+
+        }
+
+    }
+
+/* Arrows */
+
+.newsArrows
+{
+    display: none;
+    visibility: hidden;
+    text-align: right;
+    width: 6em;
+    float: right;
+    margin-right: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+
+
+    @include susy-breakpoint(645px,$wide)
+    {
+
+        display: inline-block !important;
+        visibility: visible !important;
+    }
+
+    > div{
+
+        float: left;
+        display: inline-block;
+        text-align: center;
+
+        &:last-child
+        {
+            float:right;
+        }
+
+        i
+        {
+            @include font-size(32px);
+            display: inline-block;
+            margin: 0 0.15em;
+            line-height: 32px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.75);
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            @include transition(all 0.3s ease);
+
+            &:hover
+            {
+                color: rgba(0, 0, 0, 0.45);
+                background-color: rgba(0, 0, 0, 0.05);
+                @include border-radius(100%);
+            }
+        }
+    }
+}
+}

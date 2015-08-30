@@ -1,0 +1,145 @@
+/* ==========================================================================
+Search
+========================================================================== */
+
+
+.sb-search
+{
+    position: absolute;
+    right: 5px;
+
+    float: right;
+    overflow: hidden;
+
+    width: 0;
+    min-width: 40px;
+    height: 40px;
+    margin-top: 18px;
+
+    @include transition(width .3s);
+    -webkit-backface-visibility: hidden;
+}
+
+.sb-search-input
+{
+    font-size: 16px;
+    font-weight: 300;
+
+    position: absolute;
+    z-index: 7;
+    top: 0;
+    right: 0;
+
+    width: 65%;
+    height: 40px;
+    margin: 0;
+    padding: 0 10px;
+
+    color: #2c3e50;
+    border: none;
+    outline: none;
+    background: #eee;
+
+    @include PNR();
+}
+
+.sb-search-input::-webkit-input-placeholder
+{
+    color: #555;
+}
+
+.sb-search-input:-moz-placeholder
+{
+    color: #555;
+}
+
+.sb-search-input::-moz-placeholder
+{
+    color: #555;
+}
+
+.sb-search-input:-ms-input-placeholder
+{
+    color: #555;
+}
+
+.sb-icon-search,
+.sb-search-submit
+{
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+    text-align: center;
+}
+
+.sb-search-submit
+{
+    z-index: -1;
+
+    opacity: 0;
+    color: transparent;
+    border: none;
+    outline: none;
+background: #fff; /* IE needs this */
+
+filter: alpha(opacity=0); /* IE 5-7 */
+}
+
+.sb-icon-search
+{
+    font-family: FontAwesome;
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+
+    z-index: 9;
+
+    text-transform: none;
+
+    color: #fff;
+    background: #111;
+
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sb-icon-search:before
+{
+    content: '\f002';
+}
+
+/* Open state */
+.sb-search.sb-search-open,
+.no-js .sb-search
+{
+    z-index: 999;
+    width: 100% !important;
+
+    @include susy-breakpoint(645px, $wide) {
+        width: 65% !important;
+    }
+
+}
+
+.sb-search.sb-search-open .sb-icon-search,
+.no-js .sb-search .sb-icon-search
+{
+    z-index: 9;
+    color: #fff;
+    background: #444;
+}
+
+.sb-search.sb-search-open .sb-search-submit,
+.no-js .sb-search .sb-search-submit
+{
+    z-index: 10;
+}

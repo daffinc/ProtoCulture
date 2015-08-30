@@ -1,0 +1,49 @@
+.single-format-aside {
+    .sep {
+        border: none;
+    }
+
+    [role=article] {
+        margin: 0;
+        padding: 0;
+        width:100% !important;
+
+        @include susy-breakpoint(960px, $wide){
+            width:100%;
+        }
+
+        .article-footer {
+            width: 95% !important;
+            margin: 0 auto !important;
+            display: block;
+        }
+    }
+    .wrap {
+        @include display-flex(flex);
+        @include flex-flow(row wrap);
+    }
+    .entry-content {
+        display: block;
+        float: left;
+        width: 95%;
+        @include susy-breakpoint(640px, $wide) {
+            width: 100%;
+        }
+
+        @include susy-breakpoint(960px, $wide) {
+            width: 60%;
+        }
+
+        .article-header {
+            @include shareme-mobile(inline-block);
+            @include susy-breakpoint(640px, $wide) {
+                @include shareme-mobile(none, hidden);
+            }
+        }
+    }
+    [role=sidebar] {
+        float: 35%;
+        display: block;
+        float: right;
+    }
+}

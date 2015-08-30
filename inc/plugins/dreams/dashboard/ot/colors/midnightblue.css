@@ -1,0 +1,74 @@
+/*
+ORANGE STYLE:
+#2c3e50 = Midnightblue buttons "normal" state
+#3c6d9d = Midnightblue buttons "hover" state
+#237acd = Midnightblue buttons text-shadow
+#39b9ee = Midnightblue selected menu item
+*/
+/************************************************************************
+*********************************** LOGO ******************************
+*************************************************************************/
+#page-ot_theme_options #option-tree-header #option-tree-logo a {
+    background: url(images/Midnightblue-logo.png) no-repeat 13px 0px; 
+}
+#page-ot_theme_options #option-tree-header #option-tree-logo a:hover {
+    background:url(images/Midnightblue-logo.png) no-repeat 13px -28px #fafafa;
+}
+/************************************************************************
+**************************** NEW LAYOUT BUTTON ***********************
+*************************************************************************/
+
+#page-ot_theme_options .option-tree-ui-button.blue {
+	background: none repeat scroll 0 0 #2c3e50;
+    text-shadow: 0 1px 0 #000;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3e50', endColorstr='#2c3e50',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options .option-tree-ui-button.blue:hover {
+    background: none repeat scroll 0 0 #3c6d9d;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c6d9d', endColorstr='#3c6d9d',GradientType=0 ); /* IE6-9 */
+}
+
+/************************************************************************
+**************************** SAVE CHANGES BUTTON ***********************
+*************************************************************************/
+#page-ot_theme_options .option-tree-ui-button.grey {
+    text-shadow: 0 1px 0 #000;
+    background-color: #2c3e50;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c3e50', endColorstr='#2c3e50',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options #option-tree-settings-api .option-tree-ui-button.grey:hover {
+    background-color:#3c6d9d;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c6d9d', endColorstr='#3c6d9d',GradientType=0 ); /* IE6-9 */
+}
+
+/************************************************************************
+************************************** MENU ITEMS ***********************
+*************************************************************************/
+#page-ot_theme_options .ui-tabs-nav li.ui-state-active a {
+    color: #2b7cc9 !important;
+    background: url(images/Midnightblue-li-item-bg-hover.png) no-repeat scroll 15px 19px #fff;
+}
+#page-ot_theme_options .ui-tabs-nav li a:hover {
+    color: #2b7cc9!important;
+}
+/************************************************************************
+**************************** RESET OPTIONS BUTTON ***********************
+*************************************************************************/
+#page-ot_theme_options .option-tree-ui-button.red {
+    background-color: #bdc3c7;
+    text-shadow: 0 1px 0 #8a949b;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bdc3c7', endColorstr='#bdc3c7',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options .option-tree-ui-button.red:hover {
+    background-color:#9fa9b0;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9fa9b0', endColorstr='#9fa9b0',GradientType=0 ); /* IE6-9 */
+}
+/************************************************************************
+**************************** HEADER ICON ***********************
+*************************************************************************/
+#page-ot_theme_options #option-tree-header {
+    background-image: url(images/Midnightblue-header-bg-right.png);
+}

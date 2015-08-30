@@ -1,0 +1,92 @@
+/* ==========================================================================
+   BT - Trigger
+   ========================================================================== */
+   .navToggle > a {
+      display: inline-block;
+      margin: 0 1em;
+      border: none;
+      background: none;
+  }
+  .navToggle > a > span {
+      display: block;
+  }
+
+/* ====================== lines button ==================================================*/
+
+.navToggle{
+    position: relative;
+    width: 60px;
+    height: 70px;
+    float: left;
+    @include transition-duration(.5s);
+    @include transform-style(preserve-3d);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+
+    .icon{
+        @include transition-duration(0.25s);
+        width: 25px;
+        height: 1px;
+        left: 15px;
+        background-color: #fff;
+        @include vertical-align();
+
+        &:before, &:after{
+            @include transition-duration(0.25s);
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background-color: white;
+            content: "";
+        }
+
+        &:before{
+          top: -7px;
+          left: 0;
+      }
+
+      &:after{
+          top: 7px;
+          left: 0;
+      }
+  }
+
+  &:hover{
+    cursor: pointer;
+
+    .icon{
+      &:before{
+        top: -10px;
+    }
+
+    &:after{
+        top: 10px;
+    }
+}
+}
+
+&.open{
+    @include transition-duration(1s);
+    @include transform(rotate(180deg));
+
+    .icon{
+        @include transition-duration(.5s);
+        background-color: transparent;
+
+        &:before{
+            @include transition-duration(.5s);
+            top: 0;
+            @include transform(rotate(45deg));
+
+        }
+
+        &:after{
+            @include transition-duration(.5s);
+            top: 0;
+            @include transform(rotate(-45deg));
+
+        }
+    }
+}
+}

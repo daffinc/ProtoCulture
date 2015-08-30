@@ -1,0 +1,526 @@
+.single {
+    .inner-content-single {
+        height: 100%;
+        display: block;
+        position: relative;
+        .wrap {
+            border: none;
+            padding: 0 0.75em;
+            width: 100%;
+        }
+        .utilities {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            border-bottom: 1px solid #f2f2f2;
+            .utilities-header {
+                float: left;
+                display: block;
+                width: 45%;
+                margin: 0;
+                padding: 0;
+                min-height: 200px;
+                height: 100%;
+                @include susy-breakpoint(640px, $wide) {
+                    width: 45%;
+                    margin: 0 0 0 0.25em;
+                }
+                h4 {
+                    padding: 0;
+                    margin: 0.75em 0;
+                    display: inline-block;
+                    font-size: 1em;
+                    i {
+                        color: #444;
+                        font-size: 1.2em;
+                    }
+                }
+                p {
+                    margin: 0;
+                    padding: 0;
+                    line-height: 1.25em;
+                    b {
+                        font-size: 1.8em;
+                        color: #444;
+                        font-style: italic;
+                    }
+                }
+                a {
+                    background-color: #000;
+                    padding: 0.45em;
+                    margin: 1em 0 0;
+                    display: inline-block;
+                    color: #f2f2f2;
+                    @include transition(all 0.3s ease);
+                    &:hover {
+                        background-color: #555;
+                        color: #fff;
+                    }
+                }
+            }
+            .utilities-pie {
+                #sharepie {
+                    display: none;
+                }
+                display: block;
+                width: 100%;
+                float: left;
+                margin: 0;
+                padding: 0;
+                @include susy-breakpoint(640px, $wide) {
+                    width: 45%;
+                }
+            }
+        }
+        [role=article] {
+            @include susy-breakpoint(960px, $wide) {
+                width: 60%;
+                float: left;
+                @include display-flex(flex);
+                @include flex-flow(column wrap);
+            }
+            .article-header {
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                @include shareme-mobile(inline-block);
+                @include susy-breakpoint(640px, $wide) {
+                    @include shareme-mobile(none, hidden);
+                }
+                h1.single-title {
+                    @include font-size(25px);
+                    @include susy-breakpoint(640px, $wide) {
+                        @include font-size(30px);
+                    }
+                    @include susy-breakpoint(960px, $wide) {
+                        @include font-size(35px);
+                    }
+                    margin: 0.75em 0 0 0;
+                    line-height: 1.5em;
+                }
+                figure {
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    overflow: hidden;
+                    height: 190px;
+                    width: 100%;
+                    @include susy-breakpoint(736px, $wide) {
+                        height: 400px;
+                    }
+                    img {
+                        max-width: 100%;
+                        width: 100%;
+                        height: auto;
+                    }
+                    figcaption {
+                        position: absolute;
+                        bottom: 5px;
+                        right: 0;
+                        @include PNL();
+                        @include font-size(11px);
+                        background: rgba(0, 0, 0, 0.25);
+                        padding: 0.25em;
+                        margin: 0;
+                        color: #f2f2f2;
+                        z-index: 9;
+                    }
+                }
+                ul.meta {
+                    margin: 0.5em 0 .75em 0;
+                    padding: 0;
+                    width: 100%;
+                    display: inline-block;
+                    > li {
+                        height: 45px;
+                        line-height: 45px;
+                        @include transform-style(preserve-3d);
+                        @include display-flex(flex);
+                        @include flex-flow(row wrap);
+                        &:first-child {
+                            display: none;
+                            visibility: hidden;
+                            @include susy-breakpoint(414px, $wide) {
+                                @include display-flex(flex);
+                                visibility: visible;
+                            }
+                        }
+                        small {
+                            display: block;
+                            float: left;
+                            height: 45px;
+                            @include vertical-align();
+                            line-height: 45px;
+                            margin-left: 0.5em;
+                        }
+                        figure {
+                            display: block;
+                            float: left;
+                            width: 45px;
+                            height: 45px;
+                            @include border-radius(100px);
+                            display: inline-block;
+                            a {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                img {
+                                    display: block;
+                                    width: 45px;
+                                    height: 45px;
+                                    @include border-radius(100px);
+                                }
+                            }
+                        }
+                        list-style: none;
+                        display: inline-block;
+                        float: left;
+                        &:last-child {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                        &:after {
+                            content: "|";
+                            display: inline;
+                            width: auto;
+                            font-family: $font_0;
+                            margin: 0 0.25em;
+                            color: #CCC;
+                        }
+                        a {
+                            font-family: 'Playfair Display', serif;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+            .entry-content {
+                small {
+                    > i {
+                        margin: 0 0.75em 0 0;
+                        padding: 0;
+                    }
+                }
+                .authorF {
+                    float: right;
+                    margin-left: 15px;
+                    width: 150px;
+                    font-size: 18px;
+                    line-height: 18px;
+                    color: #655c9d;
+                    margin-top: -12px;
+                    img {
+                        @include opacity(1);
+                        @include border-radius(100px);
+                    }
+                    small {
+                        display: none;
+                    }
+                }
+                p {
+                    @include font-size(18px);
+                    line-height: 1.5em;
+                    margin-bottom: 28px;
+                    padding: 0 0.5em;
+                }
+                ul {
+                    display: inline-block;
+                    margin: 1em 0;
+                    > li {
+                        line-height: 1.8em;
+                        color: #555;
+                        @include PNL();
+                        @include font-size(18px);
+                    }
+                }
+                ol {
+                    counter-reset: li;
+                    list-style: none;
+                    padding: 0;
+                    margin: 1em 0 1.5em 4em;
+                    display: inline-block;
+                    position: relative;
+                    li {
+                        display: block;
+                        position: relative;
+                        margin: 0 0 .75em;
+                        padding: 0;
+                        line-height: 1.5em;
+                        color: #555;
+                        @include PNL();
+                        @include font-size(18px);
+                        strong {
+                            @include PNS();
+                        }
+                        &:before {
+                            content: counter(li);
+                            counter-increment: li;
+                            position: absolute;
+                            z-index: 99;
+                            left: -1.9em;
+                            top: -.25em;
+                            background: 0 0;
+                            height: 1.5em;
+                            width: 1.5em;
+                            font: 400 1.5em/1.5em Georgia, Serif;
+                            color: #222;
+                            @include transition(all 0.3s ease-out);
+                            text-align: center;
+                        }
+                    }
+                }
+                img {
+                    @include opacity(1);
+                    margin: 0.75em 0 !important;
+                    padding: 0;
+                    width: 100%;
+                    height: auto;
+                }
+                iframe {
+                    max-width: 100%;
+                }
+                .blockquote {
+                    padding-left: 16px;
+                    border-left: 5px solid #577da4;
+                    width: 250px;
+                    p {
+                        font-style: italic;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #8c8785;
+                    }
+                }
+            }
+            #disqus_thread {
+                margin: 0 auto;
+                padding: 0;
+                width: 90%;
+                height: 100%;
+                @include display-flex(flex);
+                @include flex-flow(column wrap);
+            }
+            .article-footer {
+                width: 100%;
+                min-height: 550px;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                .post-tags {
+                    list-style: none;
+                    margin: 0;
+                    overflow: hidden;
+                    padding: 1em 0 0;
+                    border-top: 1px solid rgba(153, 153, 153, 0.08);
+                    a {
+                        background: #eee;
+                        @include border-radius(3px 0 0 3px);
+                        color: #999;
+                        display: inline-table;
+                        height: 26px;
+                        line-height: 26px;
+                        padding: 0 20px 0 23px;
+                        position: relative;
+                        margin: 0 10px 10px 0;
+                        text-decoration: none;
+                        @include transition(none);
+                        &:before {
+                            background: #fff;
+                            @include border-radius(10px);
+                            @include box-shadow(rgba(0, 0, 0, .25) inset 0 1px);
+                            content: '';
+                            height: 6px;
+                            left: 10px;
+                            position: absolute;
+                            width: 6px;
+                            top: 10px;
+                        }
+                        &:after {
+                            background: #fff;
+                            border-bottom: 13px solid transparent;
+                            border-left: 10px solid #eee;
+                            border-top: 13px solid transparent;
+                            content: '';
+                            position: absolute;
+                            right: 0;
+                            top: 0;
+                        }
+                        &:hover {
+                            background-color: #404d5b;
+                            color: white;
+                            &:after {
+                                border-left-color: #404d5b;
+                            }
+                        }
+                    }
+                }
+                .authorF {
+                    width: 95%;
+                    @include display-flex(flex);
+                    @include flex-flow(row wrap);
+                    @include align-content(center);
+                    @include align-items(flex-start);
+                    @include justify-content(flex-start);
+                    margin: 0.75em 0;
+                    padding: 1em;
+                    background: transparent;
+                    border-top: 1px solid rgba(153, 153, 153, 0.08);
+                    border-bottom: 3px solid $gray-dark;
+                    height: 100%;
+                    max-height: 100%;
+                    position: relative;
+                    @include transform-style(preserve-3d);
+                    h2 {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    figure {
+                        padding: 0;
+                        margin: 0 0.75em;
+                        width: 80px;
+                        height: 80px;
+                        @include border-radius(100px);
+                        float: left;
+                        display: inline-block;
+                        @include transform-style(preserve-3d);
+                        overflow: hidden;
+                        @include susy-breakpoint(640px, $wide) {
+                            width: 100px;
+                            height: 100px;
+                        }
+                        img {
+                            max-width: 100%;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                    div[id^=autor_] {
+                        @include display-flex(flex);
+                        @include flex-flow(row wrap);
+                        float: left;
+                        width: 100%;
+                        margin: 0;
+                        padding: 0;
+                        @include font-size(15px);
+                        h2 {
+                            line-height: 1.5em;
+                        }
+                        @include susy-breakpoint(736px, $wide) {
+                            width: 75%;
+                        }
+                        @include susy-breakpoint(960px, $wide) {
+                            width: 70%;
+                        }
+                    }
+                    .author-social {
+                        display: inherit;
+                        float: left;
+                        margin: 0;
+                        width: 100%;
+                        padding: 0;
+                        text-align: center;
+                        li {
+                            display: inline-block;
+                            float: left;
+                            margin: 0 0.5em;
+                            width: 32px;
+                            padding: 0;
+                            text-align: center;
+                            > a {
+                                color: #333;
+                                display: block;
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    margin: 0 0 1.5em;
+                    padding: 0;
+                    @include display-flex(flex);
+                    @include flex-flow(row wrap);
+                    h2 {
+                        margin: 0;
+                        padding: 0;
+                        display: inline-block;
+                        height: 100%;
+                        width: 100%;
+                    }
+                    .related_post {
+                        float: left;
+                        width: 100%;
+                        margin: 0.5em 0;
+                        list-style: none;
+                        padding: 0;
+                        @include display-flex(flex);
+                        @include flex-flow(row wrap);
+                        @include align-items(flex-start);
+                        @include align-content(flex-start);
+                        @include justify-content(flex-start);
+                        @include susy-breakpoint(736px, $wide) {
+                            width: calc(90%/4);
+                            margin: .5em 0.75em 0 0;
+                        }
+                        h2 {
+                            margin: 1em 0 0.75em;
+                            border-bottom: 5px solid #333;
+                            width: 50%;
+                            display: inline-block;
+                            padding: 0;
+                            line-height: 1.5em;
+                            @include susy-breakpoint(736px, $wide) {
+                                margin: 0;
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                        > a {
+                            width: 60%;
+                            margin: 0;
+                            padding: 0;
+                            @include display-flex(flex);
+                            @include flex-flow(column wrap);
+                            @include align-items(center);
+                            @include align-content(center);
+                            @include justify-content(center);
+                            @include susy-breakpoint(736px, $wide) {
+                                width: 100%;
+                            }
+                        }
+                        figure {
+                            margin: 0 .25em 0 0;
+                            padding: 0;
+                            width: 35%;
+                            height: 100%;
+                            @include display-flex(flex);
+                            @include flex-flow(column wrap);
+                            @include align-items(center);
+                            @include align-content(center);
+                            @include justify-content(center);
+                            @include susy-breakpoint(736px, $wide) {
+                                width: 100%;
+                            }
+                            img {
+                                @include opacity(1);
+                                max-width: 100%;
+                                width: 100%;
+                                height: auto;
+                            }
+                            a {
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                                img {
+                                    display: block;
+                                    margin: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

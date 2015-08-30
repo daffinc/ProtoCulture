@@ -1,0 +1,31 @@
+{
+  "name": "dev.proto.culture",
+  "version": "1.0.0",
+  "authors": [
+    "Adrian <adrian@dreams.agency>"
+  ],
+  "description": "Wordpress Proto Template",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "license": "MIT",
+  "homepage": "http://devstate.de",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.2",
+    "waypoints": "~3.1.1",
+    "moment": "~2.10.2",
+    "breakpoint-sass": "~2.5.0"
+  }
+}

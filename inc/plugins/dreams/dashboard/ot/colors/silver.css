@@ -1,0 +1,74 @@
+/*
+Silver STYLE:
+#dadada = Silver buttons "normal" state
+#f2f2f2 = Silver buttons "hover" state
+#C14130 = Silver buttons text-shadow
+*/
+/************************************************************************
+*********************************** LOGO ******************************
+*************************************************************************/
+#page-ot_theme_options #option-tree-header #option-tree-logo a {
+    background: url(images/Silver-logo.png) no-repeat 13px 0px; 
+}
+#page-ot_theme_options #option-tree-header #option-tree-logo a:hover {
+    background:url(images/Silver-logo.png) no-repeat 13px -28px #fafafa;
+}
+
+/************************************************************************
+**************************** NEW LAYOUT BUTTON ***********************
+*************************************************************************/
+#page-ot_theme_options .option-tree-ui-button.blue {
+	background: none repeat scroll 0 0 #dadada;
+    text-shadow: 0 1px 0 #fff;
+    color: #747474;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options .option-tree-ui-button.blue:hover {
+    background: none repeat scroll 0 0 #f2f2f2;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+}
+/************************************************************************
+**************************** SAVE CHANGES BUTTON ***********************
+*************************************************************************/
+
+#page-ot_theme_options .option-tree-ui-button.grey {
+    background-color:#dadada;
+    text-shadow: 0 1px 0 #fff;
+    color: #747474;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dadada', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options #option-tree-settings-api .option-tree-ui-button.grey:hover {
+    background-color:#f2f2f2; 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+}
+/************************************************************************
+************************************** MENU ITEMS ***********************
+*************************************************************************/
+
+#page-ot_theme_options .ui-tabs-nav li.ui-state-active a {
+    color: #747474 !important;
+    background: url(images/Silver-li-item-bg-hover.png) no-repeat scroll 15px 19px #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+/************************************************************************
+**************************** RESET OPTIONS BUTTON ***********************
+*************************************************************************/
+#page-ot_theme_options .option-tree-ui-button.red {
+    background-color:#bdc3c7;
+    text-shadow: 0 1px 0 #8a949b;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a949b', endColorstr='#8a949b',GradientType=0 ); /* IE6-9 */
+}
+
+#page-ot_theme_options .option-tree-ui-button.red:hover {
+    background-color:#9fa9b0;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9fa9b0', endColorstr='#9fa9b0',GradientType=0 ); /* IE6-9 */
+}
+/************************************************************************
+**************************** HEADER ICON ***********************
+*************************************************************************/
+#page-ot_theme_options #option-tree-header {
+    background-image: url(images/Silver-header-bg-right.png);
+}

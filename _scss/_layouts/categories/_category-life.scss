@@ -1,0 +1,23 @@
+.post-type-archive-forbes_life {
+    .article-header--life {
+        background-color: $color-gray-dark;
+        padding: 0;
+        margin: 0;
+        color: $color-life;
+        h1 {
+            margin: 0.25em 0;
+            padding: 0 0.5em;
+            @include font-size(35px);
+        }
+    }
+    .header-hero {
+        width: 100% !important;
+        height: 720px !important;
+        background-color: $color-gray-dark !important;
+        h1 {
+            a {
+                color: #f2f2f2;
+            }
+        }
+    }
+}

@@ -1,0 +1,180 @@
+
+.mymail-form {
+    margin-bottom:20px;
+}
+/* normal input fields */
+.mymail-form .input,
+.mymail-form .mymail-form-info {
+    width: 236px;
+    background: none;
+    color: #CCC;
+    font-size: 14px;
+    @include transition(all 0.3s ease-out);
+
+}
+
+.mymail-form .error .input
+{
+    border-bottom: 1px solid #EEE;
+
+}
+
+.mymail-form .input{
+    width: 235px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #EEE;
+    color: #CCC;
+    @include font-size(14px);
+    @include transition(all 0.3s ease-out);
+    height: 20px;
+    padding: 0.25em;
+    float: left;
+    display: inline-block;
+}
+
+.mymail-form .form-submit {
+
+    float: right;
+    display: inline-block;
+    width: auto;
+    margin: 0;
+    padding: 0;
+
+    @include susy-breakpoint(960px, $wide) {
+
+        float: left;
+        margin: 0 0.25em;
+
+    }
+}
+
+.mymail-form .submit-button
+{
+    @extend .btn;
+    border: none;
+    position: relative;
+
+    @include susy-breakpoint(960px, $wide) {
+        border: none;
+        position: absolute !important;
+
+    }
+}
+.mymail-form label {
+    line-height:1.6em;
+}
+
+.mymail-form li{
+    list-style:none !important;
+    margin-left:0;
+}
+/* the asterisk (*) for required fields */
+.mymail-form label .required {
+    color:#f33;
+}
+.mymail-form input.required {
+    color:inherit;
+}
+
+/* target individual input fields */
+.mymail-form .mymail-email {
+}
+
+/* lists */
+.mymail-form .mymail-lists-wrapper ul {
+    list-style:none;
+    margin-left:0;
+}
+.mymail-form .mymail-lists-wrapper ul li{
+    margin-left:0;
+}
+
+.mymail-form .mymail-list-description {
+    color:inherit;
+    display:block;
+    margin-left:25px;
+    font-size:0.8em;
+}
+
+.mymail-form .mymail-form-info {
+    display:none;
+    @include transition(all 0.3s ease-out);
+
+}
+
+/* inputs with errors */
+.mymail-form .error input {
+    border:none;
+}
+
+/* info box with error */
+.mymail-form .mymail-form-info.error {
+    position: relative;
+    bottom: 0;
+    font-size: 12px;
+    color: bisque;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+.mymail-form .mymail-form-info ul li{
+    color:inherit;
+    margin-left:0;
+}
+
+/*info box with success */
+.mymail-form .mymail-form-info.success {
+    position: relative;
+    bottom: 0;
+    font-size: 12px;
+    color: bisque;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.mymail-form .mymail-form-info p {
+    margin-bottom:0;
+}
+.mymail-form .mymail-form-info ul {
+    list-style-type:circle;
+    margin-left:0;
+    margin-bottom:0;
+}
+
+/* submit button */
+.mymail-form .submit-button {
+    margin:6px 0 0;
+}
+.mymail-form .mymail-loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 0.25em;
+    vertical-align: middle;
+    background-image: none;
+    background-repeat: no-repeat;
+    position: absolute;
+    &:before {
+        content: "";
+        background-image:url(../icons/loading-spin-white.svg) ;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 75%;
+        display: inline-block;
+        float: left;
+        font-size: 14px;
+        margin: 0 0.15em;
+        padding: 0;
+        height: 100%;
+        line-height: 21px;
+        font-family: fontawesome;
+    }
+}
+.mymail-form .mymail-loader.loading {
+    display: inline-block;
+}

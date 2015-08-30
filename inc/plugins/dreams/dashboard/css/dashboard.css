@@ -1,0 +1,157 @@
+ #login{ padding:0 !important;
+ }
+
+ body.login{
+  background: #00649D;
+}
+
+.login #login_error:before {
+  content: "oops, something went wrong, please chek it, plese contact: webmaster@devstate.de";
+  font-size: 12px;
+}
+
+.login h1 a {
+  background:url(http://cdn.devstate.de/assets/login-back.png) no-repeat 0 35px;
+  /*background-image:none, url(http://cdn.devstate.de/assets/logo-complete-back.svg);*/
+  height: 110px;
+  background-size:320px;
+  background-repeat:no-repeat;
+  max-width:326px;
+  margin:1em 0 0 0;
+  padding:0 0 1.5em 0;
+  width:100%;
+}
+
+.login #nav {
+  margin: 24px 0 0;
+  width: 50%;
+  padding: 0;
+  display: inline-block;
+  float: left;
+  text-align: left;
+}
+
+
+
+.login #backtoblog {
+  font-size: 13px;
+  padding: 0;
+  text-align: right;
+  float: right;
+  display: inline-block;
+  margin: 24px 0 0;
+}
+
+.login form {
+  margin-left:auto;
+  margin-right:auto;
+  padding:30px;
+  border: 1px solid #0085AE;
+  background-clip: padding-box;
+  background: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+}
+
+.login label {
+  color: #333;
+  line-height: 26px;
+}
+
+.login #nav a, .login #backtoblog a{
+  text-decoration: none;
+  color: #DDD;
+  display: inline-block;
+  float: left;
+  font-size: 0.9em;
+}
+
+#setting_den_slider,
+#tab_den_advanced_settings,
+#setting_den_easingver,
+#setting_den_mousewheelver,
+#setting_den_jqueryuiver,
+#setting_den_jquery-ui-css,
+#setting_den_jqueryuicssver{
+  display:none;
+}
+
+#wp-admin-bar-wp-logo{display:none;visibility:hidden;}
+
+#wpseo_meta h3.hndle span {
+  text-indent: -9999em;
+  display: block;
+}
+
+#wpseo_meta h3.hndle span:before {
+  color: #000 !important;
+  display: block;
+  float: left;
+  content: "Dreams Engineering SEO Management";
+  height: 32px;
+  width: 500px;
+  text-indent: 0;
+}
+
+#option-tree-logo a {
+  background: url(http://cdn.devstate.de/assets/favicon.png) no-repeat center center !important;
+  background-size: 32px !important;
+  width: 30px !important;
+  height: 32px !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  padding: 0px 10px !important;
+  float: none !important;
+  line-height: 32px !important;
+  text-indent:-9999em !important;
+}
+
+#option-tree-logo a:before {
+  disply:none !important;
+  visibility:hidden !important;
+}
+
+#dashboard_mymail .versions{
+  display:none;
+  visibility:hidden;
+}
+
+.dashicons-media-videos:before {
+  font-family: "dashicons";
+  content: "\f236";
+}
+
+.dashicons-ad-server:before {
+  font-family: "dashicons";
+  content: "\f136";
+}
+
+.dashicons-brand-voice:before {
+  font-family: "dashicons";
+  content: "\f116";
+}
+
+.dashicons-specials:before {
+  font-family: "dashicons";
+  content: "\f339";
+}
+
+.dashicons-galerias:before{
+  font-family: "dashicons";
+  content: "\f232";
+}
+
+.dashicons-forbes-life:before{
+  font-family: "dashicons";
+  content: "\f483";
+}
+
+.dashicons-forbes-latam:before{
+  font-family: "dashicons";
+  content: "\f319";
+}
+
+td.media-icon img[src$=".svg"],
+img[src$=".svg"].attachment-post-thumbnail {
+  width: 100% !important;
+  height: auto !important;
+}

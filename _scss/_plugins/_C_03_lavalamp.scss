@@ -1,0 +1,53 @@
+/* ==========================================================================
+LavaLamp
+========================================================================== */
+
+.zone
+{
+    .lavalamp-object
+    {
+        background-color: transparent;
+        border-bottom: 3px solid black;
+    }
+}
+
+
+
+.tabs
+{
+
+
+    .lavalamp-object
+    {
+        min-height: 22px;
+
+        color: black;
+        @include border-radius(2px);
+        background-color: transparent;
+        border-bottom: 3px solid black;
+
+
+    }
+
+
+
+    a
+    {
+        font-weight: 400;
+
+        padding: 0 5px;
+
+        text-decoration: none;
+        text-transform: uppercase;
+
+        color: #444;
+
+        @include PNR();
+        @include font-size(12px);
+    }
+
+
+
+
+
+}
