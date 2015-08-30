@@ -1,16 +1,5 @@
 *.log
 .htaccess
-sitemap.xml
-sitemap.xml.gz
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
 
 
 ### Gulp Modules ###
@@ -52,6 +41,18 @@ wp-includes/
 /wp-signup.php
 /wp-trackback.php
 /xmlrpc.php
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+/wp-content/advanced-cache.php
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/wp-cache-config.php
+
 
 # Node Modules #
 ###################
