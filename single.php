@@ -7,8 +7,6 @@
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                 <?php setPostViews(get_the_ID()); ?>
 
-                <?php user_utilities(); ?>
-
                 <?php get_template_part( '/layouts/formats/format', get_post_format() ); ?>
 
             <?php endwhile; ?>

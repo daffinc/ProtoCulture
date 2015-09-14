@@ -1,5 +1,6 @@
 <?php
 //Load Styles
+if (!function_exists("dreams_scripts_and_styles")) :
 function dreams_scripts_and_styles() {
   if (!is_admin()) {
     global $themename, $prefix;
@@ -8,77 +9,77 @@ function dreams_scripts_and_styles() {
     $jsPath = asset_path('js','main.min.js');
     $cssPath = asset_path('css','main.min.css');
 
-    $mainVer = '1.0';
+    $mainVer = '1.0.0';
+
+    $cssVer = '1.0';
     $jQver = '2.1.4';
     $mdzver = '2.8.3';
+
+    $fontAwesome = '4.3.0';
+    $jQui = '1.11.4';
 
     $ajaxify = array(
       'ajaxurl' => admin_url( 'admin-ajax.php' ),
       );
 
 
-    $dreams_css = wp_enqueue_style(
+    wp_enqueue_style(
       'style',
       get_template_directory_uri() . '/resources/css/'.$cssPath.'',
       false,
-      ''.$mainVer.'',
+      '',
       'all'
       );
 
-    $fontawesome = wp_enqueue_style(
+    wp_enqueue_style(
       'font-awesome',
-      '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
+      '//maxcdn.bootstrapcdn.com/font-awesome/'.$fontAwesome.'/css/font-awesome.min.css',
       false,
-      '4.3.0',
+      '',
       'all'
       );
 
-    $dreams_css_jquery_ui = wp_enqueue_style(
-      'dreams-css-jquery-ui',
-      '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css',
-      false,
-      '1.11.4',
-      'all'
-      );
-
-    $dreams_css;
-    $fontawesome;
 
 
 //Deregister Scripts
+
     wp_deregister_script('jquery');
-    wp_deregister_script('jquery-ui-core');
 
 //Register Scripts
 
-
     /* Modernizr */
-    wp_enqueue_script( 'dreams-modernizr', get_template_directory_uri() . '/js/modernizr.js', array( 'jquery' ), 'false' );
+    wp_enqueue_script( 'dreams-modernizr', get_template_directory_uri() . '/inc/scripts/vendor/modernizr.min.js', '', '', false );
+
 
     /* Jquery */
-    wp_enqueue_script( 'dreams-jquery', '//http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array( 'jquery' ), 'true' );
-    /* jQuery-UI */
-    wp_enqueue_script( 'dreams-jquery-ui', '//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js', array( 'jquery' ), 'true' );
+    wp_enqueue_script( 'dreams-jquery', '//ajax.googleapis.com/ajax/libs/jquery/'.$jQver.'/jquery.min.js', array( 'dreams-modernizr' ), '',true );
+
 
 
     /* Vendor */
 
 
     /* Plugins.jQuery */
-    wp_register_script('main', get_template_directory_uri() . '/resources/js/' . $jsPath, array('jquery','modernizr'), true);
+    wp_register_script('dreams-main', get_template_directory_uri() . '/resources/js/' . $jsPath .'', array('dreams-jquery','dreams-modernizr'), '', true);
 
 
 //Enqueue Scripts
-    wp_enqueue_script('modernizr');
-    wp_enqueue_script('jquery');
+    wp_enqueue_script('dreams-modernizr');
+    wp_enqueue_script('dreams-jquery');
     //wp_enqueue_script('jquery-ui-core');
-    wp_enqueue_script('main');
+    wp_enqueue_script('dreams-main');
 
   }
 }
+endif;
 
+
+if (!function_exists("deregister_styles")) :
 function deregister_styles() {
+  wp_dequeue_style('dreams-css-jquery-ui');
+
 }
+endif;
 
 
 ?>

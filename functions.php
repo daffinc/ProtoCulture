@@ -20,25 +20,38 @@ $prefix = "den_";
 $denCDN = "http://cdn.devstate.de";
 $denSiteURL = "http://dreams.agency";
 
-define('theme_name', $themename);
+define('dreamstheme', $themename);
 
 /* [01] Base & Framwork Options
 -------------------------------------------------------*/
-require_once('inc/options-base.php' );
-/* [02] Dashboard & Framework Options
--------------------------------------------------------*/
-require_once('inc/options-dashboard.php' );
-/* [03] Load JS
--------------------------------------------------------*/
-require_once('inc/options-loader.php' );
-/* [04] Plugins
--------------------------------------------------------*/
-require_once('inc/options-plugins.php' );
-/* [05] Custom Post Types
--------------------------------------------------------*/
-require_once('inc/options-post-type.php' );
+require get_template_directory() . '/inc/options-base.php';
 
-/* [06] Theme Options
+/* [02] Widgets
+-------------------------------------------------------*/
+require get_template_directory() . '/inc/options-widgets.php';
+
+/* [03] Dashboard & Framework Options
+-------------------------------------------------------*/
+require get_template_directory() . '/inc/options-dashboard.php';
+
+/* [04] Load JS
+-------------------------------------------------------*/
+require get_template_directory() . '/inc/options-loader.php';
+
+/* [05] Plugins
+-------------------------------------------------------*/
+require get_template_directory() . '/inc/options-plugins.php';
+
+/* [06] Custom Post Types
+-------------------------------------------------------*/
+require get_template_directory() . '/inc/options-post-type.php';
+
+/* [07] Theme Options
 ------------------------------------------------------*/
-require_once('inc/options-cp.php' );
+require get_template_directory() . '/inc/options-cp.php';
+
+/* [08] Theme Options
+------------------------------------------------------*/
+require get_template_directory() . '/inc/options-meta-box.php';
+
 ?>

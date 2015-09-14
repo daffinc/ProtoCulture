@@ -4,27 +4,29 @@
 // Videos
 function galerias() {
 
-    $section = 'galerias';
+    $section = 'dreamstheme';
     $slug = 'galerias';
     $names = 'Galerías';
     $name = 'galerias';
     $desc = 'galerias';
-    $key = $section;
+    $key = 'dreamstheme';
 
     $labels = array(
-        'name'                => _x( $name, $desc, $section),
-        'singular_name'       => _x( $name, $desc, $section),
-        'menu_name'           => __( $names, $section ),
-        'parent_item_colon'   => __( 'Parent '.$name.':', $section ),
-        'all_items'           => __( 'All '.$names.'', $section ),
-        'view_item'           => __( 'View '.$names.'', $section ),
-        'add_new_item'        => __( 'Add New '.$name.'', $section ),
-        'add_new'             => __( 'Add New '.$name.'', $section ),
-        'edit_item'           => __( 'Edit '.$name.'', $section ),
-        'update_item'         => __( 'Update '.$name.'', $section ),
-        'search_items'        => __( 'Search '.$names.'', $section ),
-        'not_found'           => __( 'Not found', $section ),
-        'not_found_in_trash'  => __( 'Not found in Trash', $section ),
+        'name'                => _x( ''.$names.'', ''.$names.'', 'dreamstheme'),
+        'singular_name'       => _x( ''.$name.'', ''.$names.'', 'dreamstheme'),
+        'menu_name'           => _x( ''.$names.'', 'admin menu', 'dreamstheme'),
+        'name_admin_bar'      => _x( ''.$name.'','add new on admin bar', 'dreamstheme' ),
+        'add_new'             => _x( 'Add New','+', 'dreamstheme' ),
+        'new_item'            => __( 'New', 'dreamstheme' ),
+        'add_new_item'        => __( 'Add New', 'dreamstheme' ),
+        'parent_item_colon'   => __( 'Parent:', 'dreamstheme' ),
+        'all_items'           => __( 'All', 'dreamstheme' ),
+        'view_item'           => __( 'View', 'dreamstheme' ),
+        'edit_item'           => __( 'Edit', 'dreamstheme' ),
+        'update_item'         => __( 'Update', 'dreamstheme' ),
+        'search_items'        => __( 'Search', 'dreamstheme' ),
+        'not_found'           => __( 'Not found', 'dreamstheme' ),
+        'not_found_in_trash'  => __( 'Not found in Trash', 'dreamstheme' ),
         );
 
     $rewrite = array(
@@ -51,10 +53,9 @@ function galerias() {
         );
 
     $args = array(
-        'label'               => __( $key, $section ),
-        'description'         => __( $desc, $section ),
-        'menu_icon'           => 'dashicons-'.$slug.'',
         'labels'              => $labels,
+        'description'         => __( 'Description.', 'dreamstheme' ),
+        'menu_icon'           => 'dashicons-'.$slug.'',
         'supports'            => $supports,
         'taxonomies'          => $taxonomies,
         'hierarchical'        => true,

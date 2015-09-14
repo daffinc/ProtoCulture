@@ -40,11 +40,7 @@
       <?php picturefill('dreams-640x400','dreams-640x400','dreams-480x300'); ?>
       <?php the_post_thumbnail_caption(); ?>
     </figure>
-<div class="wrap">
 
-    <div id="sharemeMobile" class="shareme-mobile" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>" data-title="Compartir"></div>
-
-</div>
   </header> <?php // end article header ?>
 
   <section class="entry-content cf" itemprop="articleBody">
@@ -79,7 +75,7 @@
 
         <div id="autor_<?php the_ID(); ?>">
           <h2><?php the_author_posts_link(); ?></h2>
-          <?php author_info(); ?>
+          <?php //  author_info(); ?>
           <p><?php the_author_meta('description');?></p>
         </div>
       </div>

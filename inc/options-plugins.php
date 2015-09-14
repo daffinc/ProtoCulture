@@ -1,46 +1,45 @@
-<?php
+ <?php
 
-/*********************
-Get Slug
-*********************/
+//Get Slug
 
+if(! function_exists('the_slug')) :
 function the_slug(){
   global $post;
   $post_slug=$post->post_name;
 
   echo "$post_slug";
 }
+endif;
 
 
+//Category Arguments
 
-/*********************
-Category Arguments
-*********************/
-
+if(! function_exists('category_name')) :
 function category_name(){
   $category = get_the_category();
   echo $category[0]->cat_name;
 }
+endif;
 
+if(! function_exists('category_link')) :
 function category_link(){
   $category = get_the_category();
   if($category[0]->cat_name){
     echo '<a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a>';
   }
 }
+endif;
 
 
+if(! function_exists('published_time')) :
 function published_time(){
   $pub = the_date('F jS, Y', '', '', FALSE);
-
   echo $pub;
-
 }
+endif;
 
-/*********************
-Published Time Link
-*********************/
-
+//Published Time Link
+if(! function_exists('published_time_links')) :
 function published_time_links(){
   $archive_year  = get_the_time('Y');
   $archive_month = get_the_time('m');
@@ -48,7 +47,9 @@ function published_time_links(){
 
   echo get_day_link( $archive_year, $archive_month, $archive_day);
 }
+endif;
 
+if(!function_exists('term_slug')) :
 function term_slug(){
   global $post;
   $name = single_term_title();
@@ -60,11 +61,11 @@ function term_slug(){
     }
   }
 }
+endif;
 
-/*********************
-Post Thumbnail Captions
-*********************/
+//Post Thumbnail Captions
 
+if(! function_exists('the_post_thumbnail_caption')) :
 function the_post_thumbnail_caption() {
   global $post;
 
@@ -75,20 +76,24 @@ function the_post_thumbnail_caption() {
     echo '<figcaption><span>'.$thumbnail_image[0]->post_title.'</span></figcaption>';
   }
 }
+endif;
 
+if(! function_exists('modify_read_more_link')) :
 function modify_read_more_link() {
   return ' <a class="btn-more" href="' . get_permalink() . '"> Leer art&iacute;culo completo...</a>';
 }
+endif;
 
+if(! function_exists('new_excerpt_more')) :
 function new_excerpt_more($more) {
  global $post;
  return ' <a class="btn-more" href="'. get_permalink($post->ID) . '"> Leer art&iacute;culo completo...</a>';
 }
+endif;
 
-/*********************
-Time Filter
-*********************/
+//Time Filter
 
+if(! function_exists('time_ago')) :
 function time_ago() {
   global $post;
   $now = time();
@@ -112,27 +117,23 @@ function time_ago() {
  }
 
 }
+endif;
 
 
-/*********************
-FIGURE SOURCE
-*********************/
+//Figure Source
 
+if(! function_exists('extract_url')) :
 function extract_url($size){
   global $post;
   $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $size);
   $url = $thumb['0'];
   echo $url;
 }
+endif;
 
 
-
-
-
-/*********************
-PictureFil
-*********************/
-
+//PictureFil
+if(! function_exists('picturefill')) :
 function picturefill($pw,$pm,$ps){
   global $post;
   $thumb0 = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $pw);
@@ -161,24 +162,20 @@ function picturefill($pw,$pm,$ps){
   }
 
 }
+endif;
 
-
-/*********************
-Comment Count
-*********************/
-
+//Comment Count
+if(! function_exists('disqus_count')) :
 function disqus_count($disqus_shortname) {
   $disqusID =
   wp_enqueue_script('disqus_count','http://'.$disqusID.'.disqus.com/count.js');
 
   echo '<a href="'. get_permalink() .'#disqus_thread"></a>';
 }
-
-/*********************
-PAGE NAVI
-*********************/
+endif;
 
 // Numeric Page Navi (built into the theme by default)
+if(!function_exists('dreams_page_navi')) :
 function dreams_page_navi() {
   global $wp_query;
   $bignum = 999999999;
@@ -198,13 +195,11 @@ function dreams_page_navi() {
     ) );
   echo '</nav>';
 } /* end page navi */
+endif;
 
+//PostViewsCOunt
 
-/*********************
-POST VIEWS
-*********************/
-
-
+if(! function_exists('getPostViews')) :
 function getPostViews($postID){
   $count_key = 'post_views_count';
   $count = get_post_meta($postID, $count_key, true);
@@ -215,7 +210,9 @@ function getPostViews($postID){
   }
   return $count.'';
 }
+endif;
 
+if(! function_exists('setPostViews')) :
 function setPostViews($postID) {
  $count_key = 'post_views_count';
  $count = get_post_meta($postID, $count_key, true);
@@ -228,14 +225,12 @@ function setPostViews($postID) {
   update_post_meta($postID, $count_key, $count);
 }
 }
+endif;
 
+//Excerpt Expert
 
-/*********************
-EXCERPT
-*********************/
-
+if(!function_exists('excerpt')) :
 function excerpt($limit) {
-
   $excerpt = explode(' ', get_the_excerpt(), $limit);
   if (count($excerpt)>=$limit) {
     array_pop($excerpt);
@@ -248,12 +243,11 @@ function excerpt($limit) {
   return $excerpt;
 
 }
+endif;
 
-/*********************
-Fotogalería
-*********************/
+//Fotogalería
 
-
+if(! function_exists('gallery')) :
 function gallery(){
   global $prefix;
   $template_url = get_template_directory_uri();
@@ -276,51 +270,12 @@ function gallery(){
 }
 
 }
+endif;
 
 
+//Author Info
 
-
-/*********************
-Inline CSS
-*********************/
-
-
-// Custom Template
-function dreams_custom_css() {
-  global $themename, $prefix;
-
-  $customcss  = ot_get_option($prefix.'customcss');
-  $background = ot_get_option($prefix.'background');
-  $color      = isset( $background['background-color'] ) ? $background['background-color'] : '';
-  $image      = isset( $background['background-image'] ) ? $background['background-image'] : '';
-  $position   = isset( $background['background-position'] ) ? $background['background-position'] : '';
-  $attachment = isset( $background['background-attachment'] ) ? $background['background-attachment'] : '';
-  $repeat     = isset( $background['background-repeat'] ) ? $background['background-repeat'] : '';
-  $size       = isset( $background['background-size'] ) ? $background['background-size'] : '';
-  $output     = '';
-
-  if($image) {
-    $output.= "body {\n background:$color url($image) $attachment $position $repeat;\n background-size:$size;\n}\n";
-  } elseif($color) {
-    $output.= "body {\n background-color:$color;\n}\n ";
-  } else {
-    return;
-  }
-
-  if ($customcss) {
-    $output .= "\n$customcss\n";
-  }
-
-  if (!empty($output)) {
-    $output = "\n<!-- Custom Styling -->\n<style>\n" . $output . "</style>\n";
-    echo $output;
-  }
-}
-
-/*********************
-Author Info
-*********************/
-
+if(! function_exists('author_social_info')) :
 function author_social_info(){
   global $post, $prefix, $author_id;
   $www = get_the_author_meta( 'user_url', $author_id );
@@ -358,11 +313,11 @@ if( !empty( $info ) ) {
   echo $info;
 }
 }
+endif;
 
-/*********************
-Social Forbes Mexico Info
-*********************/
+//Social Forbes Mexico Info
 
+if(! function_exists('social_info')) :
 function social_info(){
   global $post, $prefix;
   $tw =  ot_get_option($prefix.'twitter');
@@ -409,64 +364,48 @@ if( !empty( $info ) ) {
 }
 }
 
+endif;
 
 
 
+//Litracy Banner (Insert ads after second paragraph of single post content.)
+if(! function_exists('prefix_insert_post_ads')) :
+function prefix_insert_post_ads( $content ) {
 
-/*********************
-Custom Logo
-*********************/
+  $ad_code = '<!--- <div class="helper-content-ad"><small>PUBLICICDAD</small><figure></figure></div> -->';
 
-function custom_logo(){
-  global $themename, $prefix;
-  $template_url = get_template_directory_uri();
-  $customlogo   =  ot_get_option($prefix.'logo', ''.$template_url.'/resources/img/logo.png');
+  if ( is_single() && is_wp_mobile() && ! is_admin() ) {
+    return prefix_insert_after_paragraph( $ad_code, 2, $content );
+  }
 
-  echo "<img src=\"$customlogo\" alt=\"$themename\"/>";
-
+  return $content;
 }
+endif;
 
+// Parent Function that makes the magic happen
+if(! function_exists('prefix_insert_after_paragraph')) :
+function prefix_insert_after_paragraph( $insertion, $paragraph_id, $content ) {
+  $closing_p = '</p>';
+  $paragraphs = explode( $closing_p, $content );
+  foreach ($paragraphs as $index => $paragraph) {
 
+    if ( trim( $paragraph ) ) {
+      $paragraphs[$index] .= $closing_p;
+    }
 
-/*
-*********************
-Google Analytics
-*********************
-*/
+    if ( $paragraph_id == $index + 1 ) {
+      $paragraphs[$index] .= $insertion;
+    }
+  }
 
-function dreams_google_analytics(){
-
-  global $themename, $prefix;
-  $template_url = get_template_directory_uri();
-  $gaCode       = ot_get_option($prefix.'ga');
-  $ga           = '';
-
-
-  if($gaCode){
-    $ga .= "
-    !function(d,r,e,a,m,s){d.GoogleAnalyticsObject=e;d[e]||(d[e]=function(){
-      (d[e].q=d[e].q||[]).push(arguments)});d[e].l=+new Date;m=r.createElement(a);
-s=r.getElementsByTagName(a)[0];m.src='//www.google-analytics.com/analytics.js';
-s.parentNode.insertBefore(m,s)}(window,document,'ga','script');
-
-ga('create', '$gaCode', 'auto');
-ga('send', 'pageview');
-";
+  return implode( '', $paragraphs );
 }
-
-if (!empty($ga)) {
-  $ga = "\n<!-- Google Analytics -->\n<script>" . $ga . "</script>\n";
-  echo $ga;
-}
-
-}
+endif;
 
 ?>
 
 <?php
-/*********************
-RELATED POSTS FUNCTION
-*********************/
+//RELATED POSTS FUNCTION
 
 // Related Posts Function (call using dreams_related_posts(); )
 function dreams_related_posts() {
@@ -511,6 +450,5 @@ function dreams_related_posts() {
   wp_reset_postdata();
   echo '</ul>';
 } /* end dreams related posts function */
-
 
 ?>

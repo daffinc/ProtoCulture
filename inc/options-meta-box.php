@@ -6,7 +6,13 @@ function den_register_meta_boxes($meta_boxes){
 
   $meta_boxes[] = array(
     'title'  => 'Fotogalería',
-    'pages' => array('posts','galerias','forbes_life'),
+    'id'  => $prefix . 'fotogaleria',
+    'pages' => array('post','galerias'),
+    'show'   => array(
+      'relation'    => 'OR',
+      'post_format' => array(  'Gallery' ),
+      ),
+
     'fields' => array(
       array(
         'name' => 'Agregar fotos',
@@ -14,7 +20,24 @@ function den_register_meta_boxes($meta_boxes){
         'type' => 'image_advanced',
         ),
       ),
-  );
+    );
+
+  $meta_boxes[] = array(
+    'title'  => 'Video',
+    'id'  => $prefix . 'video',
+    'pages' => array('post','galerias'),
+    'show'   => array(
+      'relation'    => 'OR',
+      'post_format' => array(  'Video' ),
+      ),
+    'fields' => array(
+      array(
+        'name' => 'Agregar videos',
+        'id'   => $prefix .'videos',
+        'type' => 'oembed',
+        ),
+      ),
+    );
 
 
 
